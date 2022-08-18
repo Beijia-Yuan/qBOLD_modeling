@@ -132,3 +132,19 @@ regionType: Either "nw" or "lobe"
 A list of row numbers in the dataframe corresponding to the region of interest. This can be used as the applyRange input for applyFuncToDf().
 
 </br>
+
+#### preparation(cond, TE)
+
+This function sets up the enviroment for downstream calculations.
+
+##### Input:
+
+cond: A list of two conditions of interest. e.g. ["calc", "control"]. Please make sure that the conditions is consistent with the ones in column names.
+
+TE: echo time, in ms. 
+
+##### Output:
+
+None
+
+</br>
