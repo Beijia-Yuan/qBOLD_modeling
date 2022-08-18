@@ -26,7 +26,7 @@ preparation(cond, TE)
 
 #### Calculation
 
-applyFuncToDf(func, df, applyRange = [], TE = None, a = None, b = None, m = None, relCMRO2 = False, relCBF = False)
+applyFuncToDf(func, df, applyRange = [], TE = None, a = None, b = None, m = None)
 
 <br/>
 
@@ -135,7 +135,7 @@ A list of row numbers in the dataframe corresponding to the region of interest. 
 
 #### preparation(cond, TE)
 
-This function sets up the enviroment for downstream calculations.
+This function sets up the enviroment for downstream calculations. You should run it before you run each condition pair.
 
 ##### Input:
 
@@ -148,3 +148,47 @@ TE: echo time, in ms.
 None
 
 </br>
+
+#### applyFuncToDf(func, df, applyRange = [], TE = None, a = None, b = None, m = None)
+
+This function calculates a new parameter based on existent parameters.
+
+##### Input:
+
+###### Required:
+
+func: 
+
+&emsp; M: calculating scaling factor M based on R2p of the baseline condition
+
+&emsp; N: calculating CBF,CMRO2 coupling
+
+&emsp; A: calculating alpha constant based on CBF, CBV
+
+&emsp; FickCMRO2: calculating CMRO2 based on Fick's principle for the treatment condition
+
+&emsp; FickCMRO2Ctrl: calculating CMRO2 based on Fick's principle for the baseline condition
+
+&emsp; FickCMRO2RelChange:calculating CMRO2 relative change based on Fick's principle
+
+&emsp; DavisCMRO2RelChange: calculating CMRO2 relative change based on Davis model
+
+&emsp; DavisCBFRelChange: calculating CBF relative change based on Davis model
+
+&emsp; DavisBOLD: calculating BOLD signal based on Davis model
+
+df: The dataframe of the data
+
+##### Optional:
+
+TE: This allows you to change the echo time permanently on top of preparation.
+
+a: Alpha value, if not specified, alpha value will be extracted from the a column or calculated from CBF,CBV
+
+b: Beta value. Required for calculations using Davis Model.
+
+m: M value. if not specified, alpha value will be extracted from the M column or calculated from TE, R2p.
+
+##### Output:
+
+None. A new column will be added to df. 
