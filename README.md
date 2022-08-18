@@ -159,23 +159,23 @@ This function calculates a new parameter based on existent parameters.
 
 func: 
 
-&emsp; M: calculating scaling factor M based on R2p of the baseline condition
+&emsp; <b>M</b>: calculating scaling factor M based on R2p of the baseline condition
 
-&emsp; N: calculating CBF,CMRO2 coupling
+&emsp; <b>N</b>: calculating CBF,CMRO2 coupling
 
-&emsp; A: calculating alpha constant based on CBF, CBV
+&emsp; <b>A</b>: calculating alpha constant based on CBF, CBV
 
-&emsp; FickCMRO2: calculating CMRO2 based on Fick's principle for the treatment condition
+&emsp; <b>FickCMRO2</b>: calculating CMRO2 based on Fick's principle for the treatment condition
 
-&emsp; FickCMRO2Ctrl: calculating CMRO2 based on Fick's principle for the baseline condition
+&emsp; <b>FickCMRO2Ctrl</b>: calculating CMRO2 based on Fick's principle for the baseline condition
 
-&emsp; FickCMRO2RelChange:calculating CMRO2 relative change based on Fick's principle
+&emsp; <b>FickCMRO2RelChange</b>:calculating CMRO2 relative change based on Fick's principle
 
-&emsp; DavisCMRO2RelChange: calculating CMRO2 relative change based on Davis model
+&emsp; <b>DavisCMRO2RelChange</b>: calculating CMRO2 relative change based on Davis model
 
-&emsp; DavisCBFRelChange: calculating CBF relative change based on Davis model
+&emsp; <b>DavisCBFRelChange</b>: calculating CBF relative change based on Davis model
 
-&emsp; DavisBOLD: calculating BOLD signal based on Davis model
+&emsp; <b>DavisBOLD</b>: calculating BOLD signal based on Davis model
 
 df: The dataframe of the data
 
