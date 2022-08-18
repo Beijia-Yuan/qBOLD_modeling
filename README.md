@@ -101,7 +101,7 @@ A dictionary with keys being the column names and values being the corresponding
 
 #### getRange(listOf3DCoord, indexMap)
 
-This function takes a list of 3D indices and converts them to 1D indices. This is used to perform a calculation on a specific set of voxels.
+This function takes a list of 3D indices and converts them to 1D row indices for the dataframe. This is used to perform a calculation on a specific set of voxels.
 
 ##### Input:
 
@@ -115,3 +115,20 @@ A list of row numbers in the dataframe corresponding to the voxels of interest. 
 
 <br/>
 
+#### getRegion(df, region, regionType)
+
+This function gives the row indices corresponding to a specific brain region.
+
+##### Input:
+
+df: The pandas dataframe storing the data
+
+region: A string specifying the region of interest, e.g. "Occ". The region must be an entity in either the nw or lobe column.
+
+regionType: Either "nw" or "lobe"
+
+##### Output:
+
+A list of row numbers in the dataframe corresponding to the region of interest. This can be used as the applyRange input for applyFuncToDf().
+
+</br>
