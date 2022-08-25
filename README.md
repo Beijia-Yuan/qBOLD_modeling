@@ -26,7 +26,25 @@ preparation(cond, TE)
 
 #### Calculation
 
-applyFuncToDf(func, df, applyRange = [], TE = None, a = None, b = None, m = None)
+applyFuncToDf(func, df, applyRange = [], TE = None, a = None, b = None, m = None, colName = None)
+
+#### Pre-defined operations for calculation
+
+##### Parameters: 
+M, N, A
+
+##### Fick's principle: 
+FickCMRO2, FickCMRO2Ctrl, FickCMRO2RelChange
+
+##### Davis model: 
+DavisCMRO2RelChange, DavisBOLD, DavisCBFRelChange 
+
+##### Fujita's approach: 
+FujitaR2pRelChange, FujitaCMRO2RelChange
+
+#### Helper function to define your own operation
+
+rc(variable)
 
 <br/>
 
