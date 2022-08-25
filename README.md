@@ -199,9 +199,11 @@ func:
 
 &emsp; <b>FujitaCMRO2RelChange</b>: Relative change of CMRO2 calculated using Fick's principle with relative CBF, CBV, and R2' data. Relative R2' data is calculated form FujitaR2pRelChange
 
+&emsp; <b>rc(Variable)</b>: A string argument is required to specify the variable for relative change, e.g. rc("R2p"). The colName parameter is required.
+
 df: The dataframe of the data
 
-##### Optional:
+###### Optional:
 
 TE: This allows you to change the echo time permanently on top of preparation.
 
@@ -216,3 +218,8 @@ colName: Column name of the newly calculated entity. Required for self-defined f
 ##### Output:
 
 None. A new column will be added to df. 
+
+##### Define your own function:
+
+def functionName(row):
+  return f(row[colNames])
