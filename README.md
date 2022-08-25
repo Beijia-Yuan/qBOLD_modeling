@@ -133,7 +133,7 @@ A list of row numbers in the dataframe corresponding to the voxels of interest. 
 
 <br/>
 
-#### getRegion(df, region, regionType)
+#### getRegion(df, listOfRegion, regionType)
 
 This function gives the row indices corresponding to a specific brain region.
 
@@ -141,9 +141,9 @@ This function gives the row indices corresponding to a specific brain region.
 
 df: The pandas dataframe storing the data
 
-region: A string specifying the region of interest, e.g. "Occ". The region must be an entity in either the nw or lobe column.
+region: A string specifying the region of interest, e.g. "Occ". The region must be an entity in the column of regionType.
 
-regionType: Either "nw" or "lobe"
+regionType: Column name of the specified region, e.g. "nw" or "lobe" or "parcel".
 
 ##### Output:
 
@@ -167,7 +167,7 @@ None
 
 </br>
 
-#### applyFuncToDf(func, df, applyRange = [], TE = None, a = None, b = None, m = None)
+#### applyFuncToDf(func, df, applyRange = [], TE = None, a = None, b = None, m = None, colName = None)
 
 This function calculates a new parameter based on existent parameters.
 
@@ -195,6 +195,10 @@ func:
 
 &emsp; <b>DavisBOLD</b>: calculating BOLD signal based on Davis model
 
+&emsp; <b>FujitaR2pRelChange</b>: Delta R2' calculated using BOLD data divided by baseline measured R2'
+
+&emsp; <b>FujitaCMRO2RelChange</b>: Relative change of CMRO2 calculated using Fick's principle with relative CBF, CBV, and R2' data. Relative R2' data is calculated form FujitaR2pRelChange
+
 df: The dataframe of the data
 
 ##### Optional:
@@ -206,6 +210,8 @@ a: Alpha value, if not specified, alpha value will be extracted from the a colum
 b: Beta value. Required for calculations using Davis Model.
 
 m: M value. if not specified, alpha value will be extracted from the M column or calculated from TE, R2p.
+
+colName: Column name of the newly calculated entity. Required for self-defined functions.
 
 ##### Output:
 
